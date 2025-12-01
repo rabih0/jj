@@ -6,9 +6,7 @@ body {
   font-family: system-ui, sans-serif;
 }
 
-
-
-/* Glassmorphism Utilities - Simplified */
+/* Glassmorphism Utilities - Mobile Optimized */
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(16px);
@@ -24,15 +22,25 @@ body {
   border: 1px solid rgba(209, 213, 219, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .glass-card {
+    padding: 1.5rem;
+  }
 }
 
 .glass-input {
   background-color: transparent;
   border: 1px solid rgba(209, 213, 219, 0.5);
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   transition: all 0.2s;
+  font-size: 16px;
+  /* Prevents zoom on iOS */
+  min-height: 44px;
+  /* Better touch target */
 }
 
 .glass-input:focus {
@@ -44,12 +52,26 @@ body {
 .glass-button {
   background-color: #374151;
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 0.5rem;
   font-weight: 500;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
+  min-height: 44px;
+  /* Better touch target */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  touch-action: manipulation;
+  /* Prevents double-tap zoom */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .glass-button:hover {
   opacity: 0.9;
+}
+
+.glass-button:active {
+  transform: scale(0.98);
+  opacity: 0.85;
 }

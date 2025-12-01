@@ -93,7 +93,7 @@ export default function ClientsPage() {
             <header className="mb-6">
                 <div className="flex justify-between items-center mb-4">
                     <div>
-                        <h1 className="text-3xl font-bold text-primary mb-1">Kunden</h1>
+                        <h1 className="text-2xl md:text-3xl font-bold text-primary mb-1">Kunden</h1>
                         <p className="text-muted-foreground">
                             {filteredClients?.length || 0} Kunde(n)
                         </p>
@@ -102,15 +102,16 @@ export default function ClientsPage() {
                         onClick={() => openModal()}
                         className="glass-button flex items-center gap-2"
                     >
-                        <Plus size={18} />
-                        Neuer Kunde
+                        <Plus size={16} />
+                        <span className="hidden sm:inline">Neuer Kunde</span>
+                        <span className="sm:hidden">Neu</span>
                     </button>
                 </div>
 
                 {/* Search */}
                 <div className="glass-card">
                     <div className="relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={16} />
                         <input
                             type="text"
                             placeholder="Kunde suchen..."
@@ -125,7 +126,7 @@ export default function ClientsPage() {
             {/* Clients List */}
             {!filteredClients || filteredClients.length === 0 ? (
                 <div className="glass-card text-center py-12">
-                    <Mail size={48} className="mx-auto mb-4 text-muted-foreground" />
+                    <Mail size={40} className="mx-auto mb-4 text-muted-foreground" />
                     <h3 className="text-lg font-semibold mb-2">Keine Kunden gefunden</h3>
                     <p className="text-muted-foreground mb-6">
                         {searchTerm
@@ -137,7 +138,7 @@ export default function ClientsPage() {
                             onClick={() => openModal()}
                             className="glass-button inline-flex items-center gap-2"
                         >
-                            <Plus size={18} />
+                            <Plus size={16} />
                             Neuer Kunde
                         </button>
                     )}
