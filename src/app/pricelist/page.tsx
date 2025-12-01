@@ -57,7 +57,11 @@ export default function PriceListPage() {
                 assemblyPrice: item.assemblyPrice || 0,
                 disassemblyPrice: item.disassemblyPrice || 0,
                 hasSizes: item.hasSizes || false,
-                sizes: item.sizes || SIZES.map(size => ({ size, price: 0, volume: 0 }))
+                sizes: item.hasSizes && item.sizes ? item.sizes.map(s => ({
+                    size: s.size,
+                    price: s.price,
+                    volume: s.volume || 0
+                })) : SIZES.map(size => ({ size, price: 0, volume: 0 }))
             });
         } else {
             setEditingItem(null);
