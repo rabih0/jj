@@ -9,13 +9,14 @@ export function BottomNav() {
     const pathname = usePathname();
 
     const navItems = [
-        { href: '/', icon: Home, label: 'Home' },
-        { href: '/invoices', icon: FileText, label: 'Invoices' },
-        { href: '/invoices/new', icon: PlusCircle, label: 'New', highlight: true },
-        { href: '/pricelist', icon: Tag, label: 'Prices' },
-        { href: '/clients', icon: Users, label: 'Clients' },
-        { href: '/settings', icon: Settings, label: 'Settings' },
+        { href: '/', icon: Home, label: 'Start' },
+        { href: '/invoices', icon: FileText, label: 'Rechnungen' },
+        { href: '/invoices/new', icon: PlusCircle, label: 'Neu', highlight: true },
+        { href: '/pricelist', icon: Tag, label: 'Preise' },
+        { href: '/clients', icon: Users, label: 'Kunden' },
+        { href: '/settings', icon: Settings, label: 'Einstellungen' },
     ];
+
 
 
     return (
