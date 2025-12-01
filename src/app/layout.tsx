@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cairo } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { BottomNav } from "@/components/ui/BottomNav";
 
@@ -13,15 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
 export const metadata: Metadata = {
-  title: "نظام إدارة النقل - UmzugsManager",
-  description: "نظام شامل لإدارة شركات النقل والفواتير",
+  title: "UmzugsManager - Umzugsverwaltungssystem",
+  description: "Professionelles System zur Verwaltung von Umzugsunternehmen und Rechnungen",
 };
 
 export default function RootLayout({
@@ -30,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="de">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
           {children}
