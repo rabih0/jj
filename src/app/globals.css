@@ -3,8 +3,14 @@
 body {
   background-color: #f3f4f6;
   color: #1f2937;
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-cairo), system-ui, sans-serif;
+  direction: rtl;
 }
+
+* {
+  font-family: var(--font-cairo), system-ui, sans-serif;
+}
+
 
 /* Glassmorphism Utilities - Simplified */
 .glass {
